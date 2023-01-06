@@ -28,9 +28,8 @@ Class Service{
     function listUsers() {
         $query = 'SELECT * FROM animals.animal_table';
             $currentUsers = $this->mysqli_service->givenQuery($query);
-            return json_encode($currentUsers);
+            return $currentUsers; 
     }
-    
 }
 
 new Service();
