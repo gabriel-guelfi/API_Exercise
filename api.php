@@ -27,12 +27,14 @@ public function list_Animals_Template() {
     // include_once './Templates/list.php';
     include_once './Services/animal_service.php';
     $animal_service = new Service;
-    $info = json_encode($animal_service->listUsers());
-    echo $info;
+    $this->respond($animal_service->listUsers());
 }
-
-
-
+    
+    
+private function respond($dados){
+    header('Content-Type: application/json');
+    echo json_encode($dados);
+}
 
 
 }
